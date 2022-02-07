@@ -10,8 +10,19 @@ namespace HttpFirst
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
+            var serviceProvider = new ServiceCollection()
+                .AddSingleton<IHttpService, HttpService>()
+                .AddTransient<IUserService, UserService>()
+                .AddTransient<IResourceService, ResourceService>()
+                .AddTransient<IAuthService, AuthService>()
+                .AddTransient<Starter>()
+                .AddTransient<Application>()
+                .BuildServiceProvider();
+
+            var start = serviceProvider.GetService<Starter>();
+            await start.Run();
         }
     }
 }

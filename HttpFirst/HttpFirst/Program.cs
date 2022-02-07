@@ -22,7 +22,10 @@ namespace HttpFirst
                 .BuildServiceProvider();
 
             var start = serviceProvider.GetService<Starter>();
-            await start.Run();
+            if (start != null)
+            {
+                await start.Run();
+            }
         }
     }
 }

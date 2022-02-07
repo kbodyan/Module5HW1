@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HttpFirst
+namespace HttpFirst.Users
 {
     public class User
     {
-        public Data data { get; set; }
-        public Support support { get; set; }
+        public Data? Data { get; set; }
+        public Support? Support { get; set; }
     }
 }

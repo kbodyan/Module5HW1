@@ -29,7 +29,7 @@ namespace HttpFirst
             builder.AddJsonFile("appsettings.json");
             IConfigurationRoot config = builder.Build();
             var serverURL = config.GetConnectionString("DefaultConnection");
-            await _application.Run(config);
+            await _application.Run(serverURL);
         }
     }
 }

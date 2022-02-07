@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace HttpFirst
 {
-    internal class UserService
+    public class UserService
     {
+        private IHttpService _httpService;
+
+        public UserService(IHttpService httpService)
+        {
+            _httpService = httpService;
+        }
+
+        public async void Query1()
+        {
+
+        }
     }
 }

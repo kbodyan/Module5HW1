@@ -16,10 +16,7 @@ namespace HttpFirst
                 .BuildServiceProvider();
 
             var start = serviceProvider.GetService<Starter>();
-            if (start != null)
-            {
-                await start.Run();
-            }
+            await start!.Run();
         }
     }
 }

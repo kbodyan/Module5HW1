@@ -1,4 +1,6 @@
-﻿namespace HttpFirst
+﻿using HttpFirst.Responses;
+
+namespace HttpFirst
 {
     public class Application : IApplication
     {
@@ -17,21 +19,22 @@
 
         public async Task Run(string serverURL)
         {
-            var taskList = new List<Task>
-            {
+            await Task.WhenAll(
                 _userService.Query1(serverURL),
                 _userService.Query2(serverURL),
                 _userService.Query3(serverURL),
                 _resourceService.Query4(serverURL),
                 _resourceService.Query5(serverURL),
-                _resourceService.Query6(serverURL)
-            };
-            foreach (var item in taskList)
-            {
-                item.Start();
-            }
-
-            await Task.WhenAll(taskList);
+                _resourceService.Query6(serverURL),
+                _userService.Query7(serverURL),
+                _userService.Query8(serverURL),
+                _userService.Query9(serverURL),
+                _userService.Query10(serverURL),
+                _authService.Query11(serverURL),
+                _authService.Query12(serverURL),
+                _authService.Query13(serverURL),
+                _authService.Query14(serverURL),
+                _userService.Query15(serverURL));
         }
     }
 }

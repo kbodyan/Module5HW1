@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Net;
-using System.Net.Http;
-using System.IO;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Configuration.Json;
+﻿using System.Text;
 using Newtonsoft.Json;
 
 namespace HttpFirst
@@ -20,7 +10,7 @@ namespace HttpFirst
             using (var httpClient = new HttpClient())
             {
                 var httpRequestMessage = new HttpRequestMessage(httpMethod, uri);
-                if (payload is not object && payload != null)
+                if (payload != null)
                 {
                     httpRequestMessage.Content = new StringContent(JsonConvert.SerializeObject(payload), Encoding.UTF8, "application/json");
                 }

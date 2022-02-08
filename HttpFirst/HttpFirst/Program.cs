@@ -1,10 +1,4 @@
-﻿using System;
-using System.Net;
-using System.Net.Http;
-using System.IO;
-using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace HttpFirst
 {
@@ -17,8 +11,8 @@ namespace HttpFirst
                 .AddTransient<IUserService, UserService>()
                 .AddTransient<IResourceService, ResourceService>()
                 .AddTransient<IAuthService, AuthService>()
+                .AddTransient<IApplication, Application>()
                 .AddTransient<Starter>()
-                .AddTransient<Application>()
                 .BuildServiceProvider();
 
             var start = serviceProvider.GetService<Starter>();

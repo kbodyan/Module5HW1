@@ -4,6 +4,6 @@ namespace HttpFirst
 {
     public interface IApplication
     {
-        Task Run(IConfigurationRoot config);
+        Task Run(string serverURL);
     }
 }

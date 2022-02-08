@@ -1,5 +1,4 @@
-﻿
-namespace HttpFirst
+﻿namespace HttpFirst
 {
     public interface IHttpService
     {

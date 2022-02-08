@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HttpFirst.Resources;
 
-namespace HttpFirst.Users
+namespace HttpFirst.Responses
 {
-    public class Response1
+    public class Response4
     {
         public int Page { get; set; }
         public int Per_page { get; set; }

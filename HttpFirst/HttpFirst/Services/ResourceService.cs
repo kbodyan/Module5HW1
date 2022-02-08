@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HttpFirst.Resources;
+﻿using HttpFirst.Resources;
+using HttpFirst.Responses;
 
 namespace HttpFirst
 {
@@ -20,24 +16,21 @@ namespace HttpFirst
         {
             HttpMethod httpMethod = HttpMethod.Get;
             var uri = $"{serverURL}/api/unknown";
-            var result = await _httpService.SendAsync<object, Response4>(uri, httpMethod, null);
-            return result;
+            return await _httpService.SendAsync<object, Response4>(uri, httpMethod, null);
         }
 
         public async Task<Resource?> Query5(string serverURL)
         {
             HttpMethod httpMethod = HttpMethod.Get;
             var uri = $"{serverURL}/api/unknown/2";
-            var result = await _httpService.SendAsync<object, Resource>(uri, httpMethod, null);
-            return result;
+            return await _httpService.SendAsync<object, Resource>(uri, httpMethod, null);
         }
 
         public async Task<Resource?> Query6(string serverURL)
         {
             HttpMethod httpMethod = HttpMethod.Get;
             var uri = $"{serverURL}/api/unknown/23";
-            var result = await _httpService.SendAsync<object, Resource>(uri, httpMethod, null);
-            return result;
+            return await _httpService.SendAsync<object, Resource>(uri, httpMethod, null);
         }
     }
 }
